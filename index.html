@@ -13968,7 +13968,15 @@ a.anchor-link {
     </script>
     <!-- End of mathjax configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Predicting-the-World-Cup-Winner-using-Machine-Learning">Predicting the World Cup Winner using Machine Learning<a class="anchor-link" href="#Predicting-the-World-Cup-Winner-using-Machine-Learning">&#182;</a></h1><p>Millions of people across the world tune in to witness the FIFA World Cup, the most renowned and popular athletic event in the world. As the tournament draws near, excitement and expectation increase as fans, experts, and even casual observers speculate on the likely results and try to pick the final champion. There have been a lot of conversations, arguments, and predictions about who will win the World Cup based on a variety of variables, including team performance, player statistics, historical data, and even gut emotions.</p>
+<p>This project's main aim is to investigate the possibilities of machine learning in the field of sports prediction, with a focus on the FIFA World Cup. By creating a strong prediction model, we intend to add to the body of knowledge and offer insightful information about the elements that affect the tournament's result.</p>
+<p>Overall, this project aims to give a useful and cutting-edge method of forecasting the results of the tournament by fusing the thrill of the FIFA World Cup with the power of machine learning. By making a contribution to the field of sports analytics and prediction, we want to improve fan, stakeholder, and the larger sporting community comprehension of the game and produce insights.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
@@ -14002,6 +14010,17 @@ a.anchor-link {
 </div>
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Data-Collection">Data Collection<a class="anchor-link" href="#Data-Collection">&#182;</a></h1><p>We gathered two data CSV files: "results.csv" (containing the game results between national teams) and "fifa_ranking.csv" (containing FIFA rankings). Then the game results data is stored in the df DataFrame, and the FIFA rankings data is stored in the rank DataFrame. We filtered the data to get data only after August 1, 2018, which corresponds to the start of the 2022 World Cup cycle.</p>
+<h1 id="Processing-Data">Processing Data<a class="anchor-link" href="#Processing-Data">&#182;</a></h1><p>The game results and rankings dataframes were then copied to new variables (df_wc and rank_wc) in order to prepare for combining them.
+The rank DataFrame and the df_wc DataFrame are merged twice to form the df_wc_ranked DataFrame.
+The "date" and "home_team" columns from df_wc as well as the "rank_date" and "country_full" columns from rank are used in the initial merging. It updates the df_wc_ranked DataFrame with the home team's ranking data.
+The "date" and "away_team" columns from df_wc_ranked (the outcome of the first merge) and the "rank_date" and "country_full" columns from rank are the foundation of the second merging. It updates the df_wc_ranked DataFrame with the away team's ranking data.
+Finally, the df_wc_ranked DataFrame has the extra columns "rank_date" and "country_full" removed.</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
